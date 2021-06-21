@@ -27,10 +27,10 @@ app.post('/', function (req, res) {
         ]
     }
     const jsonData = JSON.stringify(data);
-    const URL = "https://us6.api.mailchimp.com/3.0/lists/f3d5278f7b";
+    const URL = "https://us6.api.mailchimp.com/3.0/lists/<LIST ID>";
     const options = {
         method: "POST",
-        auth: "sreyom31:c31e452257fe3407a947f77015308dea-us6"
+        auth: "sreyom31:<API KEY>"
     }
     const request = https.request(URL, options, function (response) {
         if (response.statusCode === 200) {
@@ -55,6 +55,3 @@ app.post("/failure", function (req, res) {
 app.listen(process.env.PORT || 3000, function () {
     console.log("listening on port 3000");
 })
-
-// c31e452257fe3407a947f77015308dea-us6
-// f3d5278f7b
